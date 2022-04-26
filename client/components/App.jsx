@@ -1,37 +1,37 @@
-import React, { useState, useEffect } from 'react'
-import { getGreeting } from '../apiClient'
+import React from 'react'
+import { useSelector } from 'react-redux'
+import Header from './Header'
+import Nav from './Nav'
+import PlantList from './PlantList'
+// import { Routes, Route } from 'react-router-dom'
+import Cart from './Cart'
+// import { Route, Routes } from 'react-router-dom'
+// import Admin from './Admin'
 
-const App = () => {
-  const [greeting, setGreeting] = useState('')
-  const [count, setCount] = useState(0)
-  const [isError, setIsError] = useState(false)
 
-  useEffect(() => {
-    getGreeting()
-      .then((greeting) => {
-        console.log(greeting)
-        setGreeting(greeting)
-        setIsError(false)
-        return null
-      })
-      .catch((err) => {
-        console.log(err)
-        setIsError(true)
-      })
-  }, [count])
-
+function App() {
+  const page = useSelector(global => global.activePage)
+  const onPage = page === 'home'
   return (
-    <>
-      {count}
-      <h1>{greeting}</h1>
-      {isError && (
-        <p style={{ color: 'red' }}>
-          There was an error retrieving the greeting.
-        </p>
-      )}
-      <button onClick={() => setCount(count + 1)}>Click</button>
-    </>
+    <div className="app">
+      <Nav/>
+      <Header />
+      {onPage ? <PlantList /> : <Cart />}
+      
+      {/* <Routes>
+      <Route path='*' element={<App />} />
+      <Route path='/admin' element={<Admin />} />
+
+
+
+      </Routes> */}
+      
+  
+    </div>
   )
 }
 
 export default App
+
+
+
