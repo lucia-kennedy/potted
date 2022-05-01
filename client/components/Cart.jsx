@@ -1,6 +1,7 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {navigate, removeFromCart} from '../actions'
+import Admin from './Admin'
 
 function Cart() {
     const cart = useSelector(globalState => globalState.cart)
@@ -15,40 +16,45 @@ function Cart() {
     
       return (
       <div className="cart">
+        <h1 className='item'>Items in Cart</h1>
         <table>
           <thead>
-            <tr>
+            <tr className='cart-header'>
               <td>Plant</td>
+              <td>Price</td>
               <td>Quantity</td>
               <td>Remove</td>
             </tr>
           </thead>
-          <tbody>
-            {cart.map(({ id, name, quantity}) => {
+        
+          <tbody className='cart-body'>
+            {cart.map(({ id, name, quantity, price}) => {
               return (
                 <tr key={id}>
                   <td>{name}</td>
+                  <td>{price}</td>
                   <td>
                     <input className="update-input" value={quantity} />
                   </td>
-                  
                   <td>
-                    <button>
-                      <span className='' onClick={() => remove(id)} > Remove </span>
-                    </button>
+                  
+                      <img className='bin' onClick={() => remove(id)} src='../../images/bin.png'/>
+                
                   </td>
                 </tr>
               )
             })}
           </tbody>
         </table>
+        
   
         <p className="actions">
-          <a onClick={()=>dispatch(navigate('home'))}>Continue shopping</a>
-          <button>Update</button> {/* TODO: implement updates */}
-          <button  className="button-primary">Checkout</button>
+          <a className='conshop' onClick={()=>dispatch(navigate('home'))}>Continue shopping</a>
+          <button className='checkout'>Update</button> {/* TODO: implement updates */}
+          <button  className='checkout'>Checkout</button>
         </p>
       </div>
+
     )
   }
   

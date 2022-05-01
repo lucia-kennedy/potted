@@ -2,6 +2,7 @@ import React from 'react'
 import {useDispatch} from 'react-redux'
 import {navigate, addToCart} from '../actions'
 
+
 function PlantItem(props) {
     const dispatch = useDispatch()
   

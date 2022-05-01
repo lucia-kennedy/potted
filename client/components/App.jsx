@@ -5,8 +5,8 @@ import Nav from './Nav'
 import PlantList from './PlantList'
 // import { Routes, Route } from 'react-router-dom'
 import Cart from './Cart'
-// import { Route, Routes } from 'react-router-dom'
-// import Admin from './Admin'
+import { Route, Routes } from 'react-router-dom'
+import Admin from './Admin'
 
 
 function App() {
@@ -18,13 +18,13 @@ function App() {
       <Header />
       {onPage ? <PlantList /> : <Cart />}
       
-      {/* <Routes>
-      <Route path='*' element={<App />} />
+      <Routes>
       <Route path='/admin' element={<Admin />} />
+     
 
 
 
-      </Routes> */}
+      </Routes>
       
   
     </div>

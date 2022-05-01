@@ -17,7 +17,8 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "webpack": "webpack --config ./client/webpack.config.js",
-    "lint": "eslint --ext .js,.jsx ."
+    "lint": "eslint --ext .js,.jsx .",
+    "knex": "knex --knexfile ./server/db/knexfile.js"
   },
   "keywords": [
     "frontend"
@@ -42,9 +43,11 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "knex": "^2.0.0",
     "react-redux": "^8.0.1",
     "react-router-dom": "^6.3.0",
-    "redux": "^4.2.0"
+    "redux": "^4.2.0",
+    "sqlite3": "^5.0.6"
   },
   "devDependencies": {
     "@babel/core": "7.13.1",

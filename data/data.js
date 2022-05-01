@@ -41,5 +41,11 @@ export default {
         name: 'Monstera Adansonii',
         price: '$75',
         image: '../../images/pot7.png'
+      },
+      {
+        id: 8,
+        name: 'Weeping Fig',
+        price: '$27',
+        image: '../../images/pot8.png'
       }
     ]}

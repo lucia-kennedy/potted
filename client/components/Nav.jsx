@@ -1,16 +1,12 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import {navigate} from '../actions'
+import {Link} from 'react-router-dom'
 
 function Nav() {
 const dispatch = useDispatch()
 
   
-const addCart = (e) => {
-    e.preventDefault()
-    dispatch(navigate('cart'))
-}
-	
 
 return (
 <div>
@@ -19,7 +15,6 @@ return (
   	<nav className="nav"> 		
   		<ul className="pt-5">
             <li><a onClick={()=>dispatch(navigate('home'))}>Home</a></li>
-  			<li><a onClick={addCart}>Cart</a></li>
 			  <li><a>Admin</a></li>
   		</ul>
   	</nav>

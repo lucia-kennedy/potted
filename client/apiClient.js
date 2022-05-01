@@ -1,5 +1,11 @@
 import request from 'superagent'
 
-export function getGreeting() {
-  return request.get('/greeting').then((res) => res.body.greeting)
+const plantURL = 'api/v1/plants'
+
+export function getPlants() {
+  return request
+  .get(plantURL)
+    .then((resp) => {
+    return resp.body
+    })
 }
