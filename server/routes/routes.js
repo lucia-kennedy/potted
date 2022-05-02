@@ -22,6 +22,20 @@ router.get('/', (req, res) => {
         res.status(500).send(err.message)
       })
   })
+
+  router.get('/add', (req, res) => {
+    res.render('add')
+  })
+  
+  router.post('/add', (req, res) => {
+    db.addPlant(req.body)
+      .then(() => {
+        res.redirect('/')
+      })
+      .catch((err) => {
+        res.status(500).send('oops - ' + err.message)
+      })
+  })
   
 
 

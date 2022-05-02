@@ -21,11 +21,10 @@ function Facts() {
     <>
     
     <div className='fact-display'>
-    
     <img src='../../images/FACT.png' className='get-fact' onClick={findPlantFact}/>
     <div className='fact'>
       <p className='text'>{fact.fact}</p>
-      </div>
+    </div>
 </div>
 </>
   )
