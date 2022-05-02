@@ -7,11 +7,11 @@ export function getPlants() {
     .then((res) => res.body)
 }
 
-// export function getAllFacts() {
-//   return request 
-//   .get('api/v1/plants/fact')
-//   .then(res => {
-//     console.log(res.body)
-//     return res.body
-//   })
-// }
+export function getAllFacts() {
+  return request 
+  .get('api/v1/plants/fact')
+  .then(res => {
+    console.log(res.body)
+    return res.body
+  })
+}

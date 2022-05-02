@@ -14,8 +14,9 @@ return (
   	<label htmlFor="menu-icon"></label>
   	<nav className="nav"> 		
   		<ul className="pt-5">
-            <li><a onClick={()=>dispatch(navigate('home'))}>Home</a></li>
-			  <li><a>Admin</a></li>
+            <li><Link to={'/'}>Home</Link></li>
+			<li><Link to={'/cart'}>Cart</Link></li>
+			<li><Link to={'/admin'}>Admin</Link></li>
   		</ul>
   	</nav>
 </div>

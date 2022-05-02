@@ -13,15 +13,15 @@ router.get('/', (req, res) => {
   })
 
 
-  // router.get('/fact', (req, res) => {
-  //   db.getPlantFact()
-  //     .then((facts) => {
-  //       res.json(facts)
-  //     })
-  //     .catch((err) => {
-  //       res.status(500).send(err.message)
-  //     })
-  // })
+  router.get('/fact', (req, res) => {
+    db.getPlantFact()
+      .then((facts) => {
+        res.json(facts)
+      })
+      .catch((err) => {
+        res.status(500).send(err.message)
+      })
+  })
   
 
 

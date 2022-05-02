@@ -47,6 +47,18 @@ exports.seed = (knex) => {
         name: 'Weeping Fig',
         price: '$27',
         image: '../../images/pot8.png'
+      },
+      {
+        id: 9,
+        name: 'Giant Bird of Paradise',
+        price: '$135',
+        image: '../../images/pot9.png'
+      },
+      {
+        id: 10,
+        name: 'Fiddle Leaf Fig',
+        price: '$200',
+        image: '../../images/pot10.png'
       }
     ]);
   };

@@ -1,7 +1,9 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {navigate, removeFromCart} from '../actions'
-import Admin from './Admin'
+// import Admin from './Admin'
+import Nav from './Nav'
+import {Link} from 'react-router-dom'
 
 function Cart() {
     const cart = useSelector(globalState => globalState.cart)
@@ -15,6 +17,8 @@ function Cart() {
   
     
       return (
+      <>
+      <Nav />
       <div className="cart">
         <h1 className='item'>Items in Cart</h1>
         <table>
@@ -26,10 +30,11 @@ function Cart() {
               <td>Remove</td>
             </tr>
           </thead>
-        
+          
           <tbody className='cart-body'>
             {cart.map(({ id, name, quantity, price}) => {
               return (
+              
                 <tr key={id}>
                   <td>{name}</td>
                   <td>{price}</td>
@@ -42,6 +47,7 @@ function Cart() {
                 
                   </td>
                 </tr>
+                
               )
             })}
           </tbody>
@@ -49,12 +55,12 @@ function Cart() {
         
   
         <p className="actions">
-          <a className='conshop' onClick={()=>dispatch(navigate('home'))}>Continue shopping</a>
+          <a className='conshop'><Link to={'/'}>Continue shopping</Link></a>
           <button className='checkout'>Update</button> {/* TODO: implement updates */}
           <button  className='checkout'>Checkout</button>
         </p>
       </div>
-
+      </>
     )
   }
   

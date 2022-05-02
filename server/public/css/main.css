@@ -7,6 +7,7 @@
   
   background-color: white;
   width: 50px;
+  cursor: pointer;
 
 }
 
@@ -19,7 +20,7 @@
   
     background-color: #0a4b39; /* Green */
     border: none;
-    color: white;
+    color: white !important;;
     padding: 10px 30px;
     text-align: center;
     text-decoration: none;
@@ -29,9 +30,9 @@
     margin-top: 7px;
     transition-duration: 0.4s;
     cursor: pointer;
-
-    
 }
+
+
 
 .addCart:hover{
   background-color: #4CAF50; /* Green */
@@ -39,9 +40,7 @@
 
 }
 .conshop{
-  margin-left: 100px;
-  background-color: #FFFFF7; /* Green */
-  border: 2px solid #0a4b39;
+  margin-left: 60px;
   color: #0a4b39;
   padding: 5px 15px;
   text-align: center;
@@ -56,11 +55,14 @@
   
 }
 
-.conshop:hover{
-background-color: #0a4b39; /* Green */
-color: #FFFFF7;
-
+.link{
+  color: white;
 }
+
+.link:hover{
+  color: white;
+}
+
 
 .checkout{
   margin-right: 100px;
@@ -114,7 +116,7 @@ color: white;
   flex-direction: row;
   justify-content: center;
   margin-bottom: 10px;
-  margin-left: 50px;
+  
   text-align: center;
   margin-top: 20px;
 
@@ -197,9 +199,40 @@ color: white;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 10px;
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  justify-content: space-evenly;
 
 }
+
+
+.get-fact{
+  
+width: 300px;
+cursor: pointer;
+}
+
+.fact-display{
+  text-align: center;
+  
+  
+}
+.fact{
+  margin-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: center;
+  width: fit-content;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.text{
+  font-size: 20px;
+
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
 body{

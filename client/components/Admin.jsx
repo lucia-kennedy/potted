@@ -1,22 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Nav from './Nav'
 
 function Admin() {
+  const [name, setName] = useState('')
+  
+  const handleType = (e) => {
+    setName(e.target.value)
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(name)
+  }
   return (
-    <div>
-    <div className="field">
-  <label className="label">Plant Name</label>
-  <div className="control">
-    <input className="input" type="text" placeholder="e.g Alex Smith"/>
-  </div>
-</div>
-
-<div className="field">
-  <label className="label">Email</label>
-  <div className="control">
-    <input className="input" type="email" placeholder="e.g. alexsmith@gmail.com"/>
-  </div>
-</div>
-</div>
+    <>
+    <Nav />
+    <h2>Add a Plant</h2>
+   <form onSubmit={handleSubmit}>
+    <label htmlFor='name'>Plant Name</label>
+    <input id='name' type='text' onChange={handleType} value={name}></input>
+    <button></button>
+   </form>
+</>
 
   )
 }
