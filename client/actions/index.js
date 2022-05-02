@@ -4,6 +4,7 @@ export const NAVIGATE = 'NAVIGATE'
 export const ADD_TO_CART = 'ADD_TO_CART'
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 export const RECIEVE_PLANTS = 'RECIEVE_PLANTS'
+export const SAVE_ALL_PLANTS = 'SAVE_ALL_PLANTS'
 
 export const actionCreatorName = () => {
   return {
@@ -40,6 +41,35 @@ export const removeFromCart = (id) => {
     id: id
   }
 }
+
+export function SaveAllPlants (plants){
+  return {
+    type: 'SAVE_ALL_PLANTS',
+    plants,
+  }
+}
+
+export function sendError (msg) {
+  return { 
+    type: 'ERROR',
+    msg
+  }
+}
+
+export function getPlantsThunk () {
+  return (dispatch) => {
+    getPlants()
+    .then((plants) => {
+      dispatch(SaveAllPlants(plants))
+    })
+    .catch(err => {
+      dispatch(sendError(err.message))
+    })
+
+  }
+}
+
+
 
 // export function receivePlants(plants) {
 //   return {

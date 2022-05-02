@@ -1,11 +1,17 @@
 import request from 'superagent'
 
-const plantURL = 'api/v1/plants'
 
 export function getPlants() {
   return request
-  .get(plantURL)
-    .then((resp) => {
-    return resp.body
-    })
+  .get('api/v1/plants')
+    .then((res) => res.body)
 }
+
+// export function getAllFacts() {
+//   return request 
+//   .get('api/v1/plants/fact')
+//   .then(res => {
+//     console.log(res.body)
+//     return res.body
+//   })
+// }

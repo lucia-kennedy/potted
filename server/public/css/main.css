@@ -182,6 +182,7 @@ color: white;
   margin-top: 10px;
   font-size: large;
 
+
 }
 
 
@@ -194,7 +195,7 @@ color: white;
 .display{
   display: flex;
   flex-wrap: wrap;
-  margin-left: 100px;
+  justify-content: center;
   margin-top: 10px;
   margin-bottom: 20px
 
