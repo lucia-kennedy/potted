@@ -16,8 +16,11 @@ function PlantCare() {
     <br/>
     <ul>
         <li>🪴  Keep the potting soil moist- It is important to make sure soil is not too wet nor too dry</li>
+        <br/>
         <li>🪴  Make sure the plant pot has drainage holes in the bottom of the pot</li>
+        <br/>
         <li>🪴  Place your plant near a light source, whether it is natural or artificial</li>
+        <br/>
         <li>🪴  Determine what species of plant you have so you can more accurately care for it</li>
     </ul>
     <br/>
@@ -30,7 +33,9 @@ function PlantCare() {
     <br/>
     <ul >
         <li>🌵 Overwatering or underwatering</li>
+        <br/>
         <li>🌵 Light Levels - either not enough light or too much light</li>
+        <br/>
         <li>🌵 Neglect</li>
     </ul>
     <br/>
@@ -46,10 +51,15 @@ function PlantCare() {
     <br/>
     <ul>
         <li>🌱 Soil probe – This probe will draw out soil, which will help you understand how dry the soil is below the surface.</li>
+        <br/>
         <li>🌱 Moisture meter – This tool tells you, on a scale, how dry soil is.</li>
+        <br/>
         <li>🌱 Lifting the plant up – Heaviness signifies the plant has enough water, but lightness signifies the plant is dry.</li>
+        <br/>
         <li>🌱 Wilting – Wilting typically happens because the plant is not getting sufficient water. Lift the plant to see if it is light in weight or if it’s heavy.</li>
+        <br/>
         <li>🌱 Tipping – If the leaf edges begin browning and are crispy to the touch, the plant likely needs water. If the leaf edges are becoming brown but feel mushy, the plant has likely gotten too much water.</li>
+        <br/>
         <li>🌱 Yellow leaves – Yellow leaves may also signify that a plant has too much or too little water, but this is not always the case.</li>
     </ul>
     </div>
