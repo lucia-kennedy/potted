@@ -10,7 +10,7 @@ function getAllPlants(db = connection) {
 
 function addPlant (plant, db=connection){
   return db('plants')
-  .insert(plant)
+  .insert(plant, 'id')
 }
 
 module.exports = {

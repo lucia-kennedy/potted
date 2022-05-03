@@ -90,8 +90,8 @@ export function postPlants (plant) {
       image: plant.image
     }
     postPlant(anotherPlant)
-    .then(() => {
-     
+    .then((plantFromDB) => {
+     dispatch(addAPlant(plantFromDB))
     })
     .catch(err => {
       dispatch(sendError(err.message))
