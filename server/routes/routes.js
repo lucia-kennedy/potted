@@ -23,14 +23,14 @@ router.get('/', (req, res) => {
       })
   })
 
-  router.get('/add', (req, res) => {
-    res.render('add')
-  })
-  
-  router.post('/add', (req, res) => {
-    db.addPlant(req.body)
-      .then(() => {
-        res.redirect('/')
+  router.post('/', (req, res) => {
+    const anotherPlant = req.body
+    db.addPlant(anotherPlant)
+      .then((idArr) => {
+        const [id] = idArr
+        anotherPlant.id = id
+        
+        res.json(anotherPlant)
       })
       .catch((err) => {
         res.status(500).send('oops - ' + err.message)

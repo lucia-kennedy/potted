@@ -1,10 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import {navigate} from '../actions'
 import {Link} from 'react-router-dom'
 
 function Nav() {
-const dispatch = useDispatch()
+
 
   
 
@@ -15,7 +14,7 @@ return (
   	<nav className="nav"> 		
   		<ul className="pt-5">
             <li><Link to={'/'}>Home</Link></li>
-			<li><Link to={'/cart'}>Cart</Link></li>
+			<li><Link to={'/plantcare'}>Care</Link></li>
 			<li><Link to={'/admin'}>Admin</Link></li>
   		</ul>
   	</nav>

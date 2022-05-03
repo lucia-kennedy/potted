@@ -15,3 +15,11 @@ export function getAllFacts() {
     return res.body
   })
 }
+
+export function postPlant(anotherPlant) {
+  return request
+  .post('api/v1/plants')
+  .send(anotherPlant)
+  .then((res) => res.body)
+
+}

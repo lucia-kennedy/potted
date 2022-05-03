@@ -9,6 +9,7 @@ import { Route, Routes } from 'react-router-dom'
 import Admin from './Admin'
 import { getPlantsThunk } from '../actions'
 import Product from './Product'
+import PlantCare from './PlantCare'
 
 
 function App() {
@@ -35,7 +36,7 @@ function App() {
       <Route path='/' element={<PlantList/>}/>
       <Route path='/admin' element={<Admin />} />
       <Route path='/cart' element={<Cart />}/>
-      <Route path='/product/:id' element={<Product/>}/>
+      <Route path='/plantcare' element={<PlantCare/>}/>
      </Routes>
       
   

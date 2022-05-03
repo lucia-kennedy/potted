@@ -1,10 +1,13 @@
-import { getPlants } from "../apiClient"
+import { getPlants, postPlant } from "../apiClient"
 
 export const NAVIGATE = 'NAVIGATE'
 export const ADD_TO_CART = 'ADD_TO_CART'
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 export const RECIEVE_PLANTS = 'RECIEVE_PLANTS'
 export const SAVE_ALL_PLANTS = 'SAVE_ALL_PLANTS'
+export const ADD_A_PLANT = 'ADD_A_PLANT'
+
+//ACTIONS
 
 export const actionCreatorName = () => {
   return {
@@ -56,6 +59,15 @@ export function sendError (msg) {
   }
 }
 
+export function addAPlant (plant) {
+  return{
+  type: 'ADD_A_PLANT',
+  plant
+ }
+}
+
+//THUNKS
+
 export function getPlantsThunk () {
   return (dispatch) => {
     getPlants()
@@ -68,6 +80,27 @@ export function getPlantsThunk () {
 
   }
 }
+
+export function postPlants (plant) {
+  return (dispatch) => {
+    
+    const anotherPlant = {
+      name: plant.name,
+      price: plant.price,
+      image: plant.image
+    }
+    postPlant(anotherPlant)
+    .then(() => {
+     
+    })
+    .catch(err => {
+      dispatch(sendError(err.message))
+    })
+
+  }
+}
+
+ 
 
 
 
