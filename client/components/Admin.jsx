@@ -3,15 +3,15 @@ import Nav from './Nav'
 import {postPlants} from '../actions/index'
 
 function Admin() {
-  // const [name, setName] = useState('')
+  const [name, setName] = useState([])
   
-  // const handleType = (e) => {
-  //   setName(e.target.value)
-  // }
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   console.log(name)
-  // }
+  const handleType = (e) => {
+    setName(e.target.value)
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(name)
+  }
 
 
   return (
@@ -20,15 +20,10 @@ function Admin() {
 
     <h2>Add a Plant</h2>
     
-    <form action='/' method='post'>
+    <form onSubmit={handleSubmit}>
     <label htmlFor='name'>Plant</label>
-    <input type='text' id='name' name='name'></input>
+    <input type='text' id='name' name='name' onChange={handleType}></input>
     <button>Submit</button>
-
-
-
-
-
     </form>
   
   
