@@ -23,3 +23,9 @@ export function postPlant(anotherPlant) {
   .then(res => res.body)
 
 }
+
+export function delPlant (id) {
+  return request
+    .delete('/api/v1/plants/' + id)
+    .then(() => null)
+}

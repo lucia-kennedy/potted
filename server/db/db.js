@@ -13,9 +13,17 @@ function addPlant (plant, db=connection){
   .insert(plant, 'id')
 }
 
+
+function delPlant (id, db = connection) {
+  return db('plants')
+    .where('id', id)
+    .del()
+}
+
 module.exports = {
     getAllPlants,
     getPlantFact,
-    addPlant
+    addPlant,
+    delPlant
 
 }
