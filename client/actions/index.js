@@ -1,4 +1,4 @@
-import { getPlants, postPlant } from "../apiClient"
+import { delPlant, getPlants, postPlant } from "../apiClient"
 
 export const NAVIGATE = 'NAVIGATE'
 export const ADD_TO_CART = 'ADD_TO_CART'
@@ -6,6 +6,7 @@ export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 export const RECIEVE_PLANTS = 'RECIEVE_PLANTS'
 export const SAVE_ALL_PLANTS = 'SAVE_ALL_PLANTS'
 export const ADD_A_PLANT = 'ADD_A_PLANT'
+export const DEL_PLANT = 'DEL_PLANT'
 
 //ACTIONS
 
@@ -66,6 +67,14 @@ export function addAPlant (plant) {
  }
 }
 
+export function ditchPlant (id) {
+  return {
+    type: 'DEL_PLANT',
+    id
+  }
+}
+ 
+
 //THUNKS
 
 export function getPlantsThunk () {
@@ -100,7 +109,17 @@ export function postPlants (plant) {
   }
 }
 
- 
+export function removePlant (id) {
+  return (dispatch) => {
+    delPlant(id)
+      .then(() => {
+        dispatch(ditchPlant(id))
+      })
+      .catch(err => {
+        dispatch(sendError(err.message))
+      })
+  }
+}
 
 
 

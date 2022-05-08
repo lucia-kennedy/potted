@@ -13,6 +13,7 @@ function PlantItem(props) {
       dispatch(addToCart(id, name, price, image))
     }
 
+    
 
 const {id, name, price, image} = props.plants
 
@@ -28,7 +29,7 @@ return (
 
     
       <button className='addCart' onClick={addCart}><Link className='link' to={'/cart'}>Add to cart</Link></button>
-   
+     
 
   </div>
 </div>

@@ -36,6 +36,18 @@ router.get('/', (req, res) => {
         res.status(500).send('oops - ' + err.message)
       })
   })
+
+  router.delete('/:id', (req, res) => {
+    const id = req.params.id
+  
+    db.delPlant(id)
+      .then(() => {
+        res.sendStatus(200)
+      })
+      .catch((err) => {
+        res.status(500).json({ message: err.message })
+      })
+  })
   
 
 

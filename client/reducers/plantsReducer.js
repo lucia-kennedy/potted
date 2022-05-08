@@ -8,6 +8,8 @@ function plants(state = [], action) {
     return action.plants
     case ADD_A_PLANT:
       return [...state, action.plant]
+    case 'DEL_PLANT':
+      return state.filter(plant => plant.id !== action.id)
     default:
       return state
   }
