@@ -1,4 +1,4 @@
-import { delPlant, getPlants, postPlant } from "../apiClient"
+import { delPlant, getPlants, postAPlant } from "../apiClient"
 
 export const NAVIGATE = 'NAVIGATE'
 export const ADD_TO_CART = 'ADD_TO_CART'
@@ -60,10 +60,10 @@ export function sendError (msg) {
   }
 }
 
-export function addAPlant (plant) {
+export function addAPlant (anotherPlant) {
   return{
   type: 'ADD_A_PLANT',
-  plant
+  anotherPlant,
  }
 }
 
@@ -90,24 +90,27 @@ export function getPlantsThunk () {
   }
 }
 
-export function postPlants (plant) {
+export function postPlants (anotherPlant) {
   return (dispatch) => {
-    
-    const anotherPlant = {
-      name: plant.name,
-      price: plant.price,
-      image: plant.image
-    }
-    postPlant(anotherPlant)
+    // const anotherPlant = {
+    //   name: plant.name,
+    //   price: plant.price,
+    //   image: plant.image
+    // }
+    postAPlant(anotherPlant)
     .then((plantFromDB) => {
-     dispatch(addAPlant(plantFromDB))
+      console.log(plantFromDB, 'thunk')
+     return dispatch(addAPlant(plantFromDB))
     })
-    .catch(err => {
+    .then(() => {
+      return dispatch(getPlantsThunk())
+    })
+      .catch(err => {
       dispatch(sendError(err.message))
     })
-
   }
 }
+
 
 export function removePlant (id) {
   return (dispatch) => {
@@ -123,26 +126,3 @@ export function removePlant (id) {
 
 
 
-// export function receivePlants(plants) {
-//   return {
-//     type: RECIEVE_PLANTS,
-//     plants,
-//   }
-
-// }
-
-
-// export function getAllThePlants() {
-//   return (dispatch) => {
-    
-
-//     getPlants()
-//       .then((plantsArr) => {
-//         console.log(plantsArr, 'thunk')
-//         dispatch(receivePlants(plantsArr))
-//       })
-//       .catch((err) => {
-//         console.log(err)
-//       })
-//   }
-// }

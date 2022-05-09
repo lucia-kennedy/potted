@@ -29,13 +29,23 @@ router.get('/', (req, res) => {
       .then((idArr) => {
         const [id] = idArr
         anotherPlant.id = id
-        
-        res.json(anotherPlant)
+        res.json((anotherPlant))
       })
       .catch((err) => {
         res.status(500).send('oops - ' + err.message)
       })
   })
+
+  // router.post('/', (req, res) => {
+  //   const newPlant = req.body
+  //   db.addPlant(newPlant)
+  //     .then(() => {
+  //       console.log(`Nice You Added A New Plant`)
+  //     })
+  //     .catch((err) => {
+  //       res.status(500).send(err.message)
+  //     })
+  // })
 
   router.delete('/:id', (req, res) => {
     const id = req.params.id

@@ -16,7 +16,7 @@ export function getAllFacts() {
   })
 }
 
-export function postPlant(anotherPlant) {
+export function postAPlant(anotherPlant) {
   return request
   .post('api/v1/plants')
   .send(anotherPlant)

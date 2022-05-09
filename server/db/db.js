@@ -8,10 +8,12 @@ function getAllPlants(db = connection) {
     return db('facts').select()
 }
 
-function addPlant (plant, db=connection){
+
+function addPlant(plant, db = connection) {
   return db('plants')
-  .insert(plant, 'id')
+  .insert(plant)
 }
+
 
 
 function delPlant (id, db = connection) {
